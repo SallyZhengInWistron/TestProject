@@ -25,6 +25,7 @@
     loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     [FBSDKSettings setAppID:@"547875902031699"];
+    //8888888888888888
 }
 
 - (void)didReceiveMemoryWarning {
