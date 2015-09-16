@@ -17,6 +17,8 @@
 		249B7FD51BA65FD400582B02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 249B7FD41BA65FD400582B02 /* Images.xcassets */; };
 		249B7FD81BA65FD400582B02 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249B7FD61BA65FD400582B02 /* LaunchScreen.xib */; };
 		249B7FE41BA65FD400582B02 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 249B7FE31BA65FD400582B02 /* LoginTests.m */; };
+		24A334B21BA90A8E004FD11A /* FriendListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A334B11BA90A8E004FD11A /* FriendListStoryboard.storyboard */; };
+		24A334B51BA90AB9004FD11A /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A334B41BA90AB8004FD11A /* FriendListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,9 @@
 		249B7FDD1BA65FD400582B02 /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		249B7FE21BA65FD400582B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		249B7FE31BA65FD400582B02 /* LoginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
+		24A334B11BA90A8E004FD11A /* FriendListStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendListStoryboard.storyboard; sourceTree = "<group>"; };
+		24A334B31BA90AB8004FD11A /* FriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
+		24A334B41BA90AB8004FD11A /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,7 @@
 		249B7FC61BA65FD400582B02 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				24A334B01BA90A30004FD11A /* FriendList */,
 				249B7FCB1BA65FD400582B02 /* AppDelegate.h */,
 				249B7FCC1BA65FD400582B02 /* AppDelegate.m */,
 				249B7FCE1BA65FD400582B02 /* ViewController.h */,
@@ -138,6 +144,16 @@
 				249B7FE21BA65FD400582B02 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24A334B01BA90A30004FD11A /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				24A334B11BA90A8E004FD11A /* FriendListStoryboard.storyboard */,
+				24A334B31BA90AB8004FD11A /* FriendListViewController.h */,
+				24A334B41BA90AB8004FD11A /* FriendListViewController.m */,
+			);
+			name = FriendList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +239,7 @@
 				249B7FD31BA65FD400582B02 /* Main.storyboard in Resources */,
 				249B7FD81BA65FD400582B02 /* LaunchScreen.xib in Resources */,
 				249B7FD51BA65FD400582B02 /* Images.xcassets in Resources */,
+				24A334B21BA90A8E004FD11A /* FriendListStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A334B51BA90AB9004FD11A /* FriendListViewController.m in Sources */,
 				249B7FD01BA65FD400582B02 /* ViewController.m in Sources */,
 				249B7FCD1BA65FD400582B02 /* AppDelegate.m in Sources */,
 				249B7FCA1BA65FD400582B02 /* main.m in Sources */,

@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-@interface ViewController ()
+#import "FriendListViewController.h"
+@interface ViewController ()<FBSDKLoginButtonDelegate>
 //@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 //.....
 @end
@@ -25,8 +26,18 @@
     loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     [FBSDKSettings setAppID:@"547875902031699"];
+    
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    if ([FBSDKAccessToken currentAccessToken]) {
+        // User is logged in
+        NSLog(@"User is logged in");
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FriendListStoryboard" bundle:nil];
+        UIViewController * initialFriendListView = [storyboard instantiateInitialViewController];
+        initialFriendListView.modalTransitionStyle = UIModalPresentationPopover;
+        [self presentViewController:initialFriendListView animated:YES completion:nil];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
