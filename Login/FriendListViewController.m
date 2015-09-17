@@ -32,15 +32,19 @@
 }
 
 -(void)getFBPersonalData{
-    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields" : @"email,name"}]
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me/taggable_friends" parameters:@{@"fields" : @"email,name"}]
      //@{@"fields" : @"email,name,",@"context" : @"all_mutual_friends"}
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          if (!error) {
              //NSLog(@"%@",result[@"id"]);
-             NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal",result[@"id"]]];
+             
+             NSArray * friends = result[@"data"];
+             NSDictionary * friendData = friends[0];
+             NSLog(@"%@",friendData[@"id"]);
+             NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal",friendData[@"id"]]];
              NSData  *data = [NSData dataWithContentsOfURL:url];
              self.friendImage.image = [UIImage imageWithData:data];
-             self.friendName.text = result[@"name"];
+             self.friendName.text = friendData[@"name"];
 //             self.friendName.text = result[@"name"];
 //             NSURL *url = [[NSURL alloc]initWithString:result[@"picture"]];
 //             NSLog(@"%@",url);
